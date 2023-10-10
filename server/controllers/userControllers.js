@@ -16,4 +16,16 @@ userController.updateUser = async (req, res, next) => {
   return next()  
 };
 
+userController.getUser = async (req, res, next) => {
+  try {
+    const userId = req.params.id;
+    const user = await User.findById(userId).populate();
+
+    res.locals.user = user;
+    return next();
+  } catch (err) {
+    return next(err);
+  }
+};
+
 module.exports = userController;
