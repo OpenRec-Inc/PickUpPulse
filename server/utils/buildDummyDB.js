@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const MONGO_URI = 'mongodb+srv://just-bobby:Domino17%21@cluster0.tkib1.mongodb.net/test?authSource=admin&replicaSet=atlas-mk1h99-shard-0&readPreference=primary&ssl=true'
+const MONGO_URI = 'mongodb+srv://Cluster58134:DatabasePassword49@cluster58134.msu3tjj.mongodb.net/'
 
 const User = require('../models/userModel')
 const Game = require('../models/gameModel')

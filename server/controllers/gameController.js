@@ -204,11 +204,11 @@ gameController.findWithin = async (req, res, next) => {
     res.locals.filteredGames = await Game.find({
         location: {
             $geoWithin: {
-                $centersphere: [[lng, lat], radius / 3963.2]
+                $centerSphere: [[lng, lat], radius / 3963.2]
             }
         }
     })
-
+    
     next();
 }
 
