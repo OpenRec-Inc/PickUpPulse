@@ -100,13 +100,19 @@ gameController.removeHostGame = async (req, res, next) => {
 
     user.hostedGames.forEach((game) => {
         if(!game._id.equals(gameId)) {
-            newHostArr.push(e);
+            newHostArr.push(game);
+        }
+    })
+
+    user.attendingGames.forEach((game) => {
+        if(!game._id.equals(gameId)) {
+            newHostArr.push(game);
         }
     })
 
 
     user.hostedGames = newHostArr;
-    user.attendingGames = res.locals.newArr;
+    user.attendingGames = newHostArr;
     await user.save();
     
     
@@ -127,6 +133,7 @@ gameController.removeAttendeeGame = async (req, res, next) => {
                             newGamesArr.push(game);
                         }
                     })
+                    console.log('newGamesArr')
                     res.locals.newArr = newGamesArr;
                 }).catch((err) => next(err))
 
