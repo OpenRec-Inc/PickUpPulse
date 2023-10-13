@@ -106,13 +106,13 @@ gameController.removeHostGame = async (req, res, next) => {
 
     user.attendingGames.forEach((game) => {
         if(!game._id.equals(gameId)) {
-            newHostArr.push(game);
+            newAttendArr.push(game);
         }
     })
 
 
     user.hostedGames = newHostArr;
-    user.attendingGames = newHostArr;
+    user.attendingGames = newAttendArr;
     await user.save();
     
     
