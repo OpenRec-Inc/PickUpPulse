@@ -98,8 +98,8 @@ gameController.removeHostGame = async (req, res, next) => {
     const newHostArr = [];
     const newAttendArr = [];
 
-    user.hostedGames.forEach((e) => {
-        if(e != gameId) {
+    user.hostedGames.forEach((game) => {
+        if(!game._id.equals(gameId)) {
             newHostArr.push(e);
         }
     })

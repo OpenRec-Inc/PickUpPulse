@@ -55,7 +55,7 @@ export default function DetailedGameInfo() {
   return (
     <div>
     <StyledHeader>
-        <MovingHeader>Test</MovingHeader>
+        <MovingHeader>{gameName}</MovingHeader>
     </StyledHeader>
     <StyledGameInfo>
         <h1>{gameName}<span>
